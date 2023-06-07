@@ -1,0 +1,43 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>register</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+
+    <div class="gambar">
+        <ion-img src="assets/image/351905d01e8531078c1cce883f1cafed-removebg-preview.png"></ion-img>
+    </div>
+    <div id="container" style="padding: 10%">
+        <div class="login">
+            <h2> Register </h2>
+        </div>
+        <ion-item fill="outline">
+            <ion-label color="danger" position="floating">Username</ion-label>
+            <ion-input [(ngModel)]="form.username" [ngModelOptions]="{standalone: true}" placeholder="Enter Email/Username"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item fill="outline">
+            <ion-label color="danger" position="floating">Email</ion-label>
+            <ion-input [(ngModel)]="form.email"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item fill="outline">
+            <ion-label color="danger" position="floating">Password</ion-label>
+            <ion-input type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="form.password"></ion-input>
+            <ion-icon [name]="showPassword ? 'eye-off' : 'eye'" slot="end" (click)="togglePasswordVisibility()"></ion-icon>
+        </ion-item>
+        <br>
+        <ion-item fill="outline">
+            <ion-label color="danger" position="floating">Confirmation Password</ion-label>
+            <ion-input type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="form.confirmation_password"></ion-input>
+            <ion-icon [name]="showPassword ? 'eye-off' : 'eye'" slot="end" (click)="togglePasswordVisibility()"></ion-icon>
+        </ion-item>
+        <div class="register">
+            <ion-button color="danger" id="present-alert" (click)="doRegister()" expand="block">
+                <ion-icon slot="start" name="create"></ion-icon>Register
+            </ion-button>
+        </div>
+    </div>
+</ion-content>

@@ -1,0 +1,116 @@
+div.topic {
+    font-size: 1.3rem;
+    margin: 10px;
+    padding-top: 5px;
+}
+
+ion-grid {
+    margin: 2vh 10px 0 5px;
+    ion-row {
+        ion-col {
+            padding: 0 !important;
+            ion-card {
+                height: 30px;
+                ion-thumbnail {
+                    height: 100px;
+                    padding-top: 10px;
+                }
+                border: 0.001vh solid var(--ion-color-medium);
+                border-radius: 0px;
+                height: 100px;
+                width: 100%;
+                // margin: !important;
+                // padding:!important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                ion-label {
+                    font-size: 1rem;
+                    font-weight: bold;
+                    margin-top: 2px;
+                }
+            }
+        }
+    }
+}
+
+.grid2 {
+    margin-left: 50px;
+}
+
+.grid3 {
+    margin-left: 80px;
+}
+
+.grid4 {
+    margin-left: 50px;
+}
+
+.grid5 {
+    margin-left: 80px;
+}
+
+.grid6 {
+    margin-left: 50px;
+}
+
+.grid7 {
+    margin-left: 80px;
+}
+
+.topic2 {
+    font-size: 1.3rem;
+    margin: 10px;
+}
+
+.topic3 {
+    font-size: 1.3rem;
+    margin: 10px;
+}
+
+// .cart {
+//     margin-top: -50px;
+//     margin-left: auto;
+//     width: 80px;
+//     height: 80px;
+//     transform: scale(1.2);
+// }
+// #containerprofile {
+//     padding-top: 30px;
+//     display: flex;
+// }
+ion-thumbnail {
+    .gambar {
+        width: 600px;
+        height: 60px;
+    }
+}
+
+// .card {
+//     padding-top: 35px;
+// }
+// #my-footer {
+//     position: fixed;
+//     bottom: 0;
+//     width: 100%;
+//     z-index: 9999;
+//   }
+.head {
+    // border: 1px solid red;
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    // background-color: ;
+}
+
+.head>.btn-logout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --width: 60px;
+    --height: 60px;
+    --background: #202020;
+}

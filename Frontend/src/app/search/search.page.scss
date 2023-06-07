@@ -1,0 +1,47 @@
+.genre{
+    padding: 4px;
+    margin-left: 5px;
+}
+
+.floating-button {
+    position: fixed;
+    right: 20px;
+
+}
+
+.close{
+    padding-left: 265px;
+    font-size: 30px;
+}
+
+ion-fab-button {
+    --background: #f10000;
+    --border-radius: 15px;
+    font-size: 30px;
+    width: 250px;
+    color: #000;
+    
+    .onepiece{
+        width: 150px;
+        font-family: lucida sans unicode;
+        color: #000;
+        font-style: italic;
+    }
+    
+    .naruto{
+        width: 150px;
+        font-family: lucida sans unicode;
+        color: #000;
+        font-style: italic;
+    }
+
+    .boruto{
+        width: 150px;
+        font-family: lucida sans unicode;
+        color: #000;
+        font-style: italic;
+    }
+}
+
+
+

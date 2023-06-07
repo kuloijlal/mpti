@@ -1,0 +1,91 @@
+<!-- <ion-header>
+    <ion-toolbar>
+        <ion-title>
+            <div id="containerprofile">
+                Welcome To Bookstore{{ form.username }}
+                <ion-icon slot="end"></ion-icon>
+            </div>
+        </ion-title>
+        <div class="cart">
+            <ion-tab-button (click)="doLogout()" tab="power">
+                <ion-icon name="exit-outline"></ion-icon>
+                 Logout 
+            </ion-tab-button>
+        </div>
+    </ion-toolbar>
+</ion-header> -->
+
+<!-- <ion-header>
+    <ion-toolbar color="white">
+        <ion-searchbar [animated]="true" debounce="800" #searchInput placeholder="Search for Any Books" (ionChange)="onSearchChange($event)">
+        </ion-searchbar>
+    </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+    <ion-menu contentId="main-content">
+        <ion-header>
+            <ion-toolbar>
+                <ion-menu-toggle>
+                    <ion-icon class="close" name="close">
+                    </ion-icon>
+                </ion-menu-toggle>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+
+            <!--Comic -->
+            <ion-label>
+                <h1>Books Genre</h1>
+            </ion-label>
+            <ion-card></ion-card>
+            <ion-list>
+                <ion-item>
+                    <ion-label>Komik</ion-label>
+                    <ion-icon (click)="doComic()" name="eye"></ion-icon>
+                </ion-item>
+            </ion-list>
+
+            <!--Politic-->
+            <ion-list>
+                <ion-item>
+                    <ion-label>Novel</ion-label>
+                    <ion-icon (click)="doPolitic()" name="eye"></ion-icon>
+                </ion-item>
+            </ion-list>
+
+            <!--Cartoon-->
+            <ion-list>
+                <ion-item>
+                    <ion-label>Komputer Teknologi</ion-label>
+                    <ion-icon (click)="doCartoon()" name="eye"></ion-icon>
+                </ion-item>
+            </ion-list>
+
+            <ion-list>
+                <ion-item>
+                    <ion-label>Kamus</ion-label>
+                    <ion-icon (click)="doKamus()" name="eye"></ion-icon>
+                </ion-item>
+            </ion-list>
+
+            <ion-list>
+                <ion-item>
+                    <ion-label>Bisnis</ion-label>
+                    <ion-icon (click)="doBisnis()" name="eye"></ion-icon>
+                </ion-item>
+            </ion-list>
+
+
+
+        </ion-content>
+    </ion-menu>
+
+    <div class="ion-page" id="main-content">
+        <ion-content class="ion-padding">
+            <ion-menu-toggle>
+                <ion-button>Click</ion-button>
+            </ion-menu-toggle>
+        </ion-content>
+    </div>
+</ion-content>

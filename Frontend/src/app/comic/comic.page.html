@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Komik</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="arrow">
+        <ion-icon (click)="doSearch()" name="chevron-back-sharp"></ion-icon>
+    </div>
+
+    <div>
+        <ion-card *ngFor="let book of books" (click)="doItem(book.id_buku)">
+            <img src="{{book.gambar}}">
+            <ion-header>
+                <h2><b>{{book.judul_buku}}</b></h2>
+                <h3>{{book.harga_buku}}</h3>
+            </ion-header>
+        </ion-card>
+    </div>
+</ion-content>

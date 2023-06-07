@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>item</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="arrow">
+        <ion-icon (click)="close()" name="chevron-back-sharp"></ion-icon>
+    </div>
+    <ion-card>
+        <img src="{{data.gambar}}" />
+        <ion-card-header>
+            <ion-card-title>{{data.judul}}</ion-card-title>
+            <ion-card-subtitle>Harga Rp.{{data.harga_buku}}</ion-card-subtitle>
+            <ion-label>
+                <h3>{{quantity}}</h3>
+            </ion-label>
+            <br>
+            <ion-button (click)="doMin()" [disabled]="this.quantity === 1">-</ion-button>
+            <!-- <ion-button (click)="doMin()" disable>-</ion-button> -->
+            <ion-button (click)="doPlus()">+</ion-button>
+            <ion-button (click)="doCart()" class="cart">Add to Cart</ion-button>
+        </ion-card-header>
+
+        <ion-card-content>
+            {{data.sinopsis_buku}}
+        </ion-card-content>
+    </ion-card>
+</ion-content>

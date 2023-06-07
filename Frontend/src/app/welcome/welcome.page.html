@@ -1,0 +1,32 @@
+<ion-header class="head">
+    <p>Welcome To Bookstore{{ form.username }}</p>
+    <!-- <div id="containerprofile">
+    </div> -->
+    <ion-button (click)="doLogout()" class="btn-logout">
+        <ion-icon name="exit-outline"></ion-icon>
+    </ion-button>
+    <!-- <ion-toolbar class="head">
+        <ion-title>
+        </ion-title>
+        <div class="cart">
+        </div>
+    </ion-toolbar> -->
+</ion-header>
+
+<ion-content>
+    <div class="topic">
+        Recommendation
+    </div>
+
+
+    <div class="card" *ngFor="let book of book" (click)="doItem(book)">
+
+    </div>
+    <ion-card class="card" *ngFor="let book of book" (click)="doItem(book)">
+        <img src="{{book.gambar}}">
+        <ion-header>
+            <h2><b>{{book.judul_buku}}</b></h2>
+            <h3>Rp. {{book.harga_buku}}</h3>
+            <h4>{{book.sinopsis_buku}}</h4>
+        </ion-header>
+    </ion-card>

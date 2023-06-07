@@ -1,0 +1,49 @@
+.item {
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    padding: 10px;
+    
+    .item-title {
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+    
+    .item-description {
+      font-size: 14px;
+      color: gray;
+    }
+  }
+
+ion-card{
+    border-radius: 4px;
+    padding: 10px;
+    height: 900px;
+    img{
+        width: 900px;
+        padding-top: -5px;
+        height: 500px;
+
+    }
+}
+
+
+
+.cart{
+    margin-left: 170px;
+    padding-bottom: 5px;
+}
+
+.arrow{
+    margin-left: 5px;
+    font-size: 45px;
+    padding-bottom: -100px;
+    // border-radius: 50%;
+    // width: 50px;
+    margin-top: 10px;
+    // background-color: #f2f2f2;
+}
+
+.text{
+    font-size: 15px;
+}
