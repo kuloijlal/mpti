@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { ModalController, ToastController } from '@ionic/angular';
 import { environment } from 'src/environments/environment';
 import { ActivatedRoute } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+
 @Component({
   selector: 'app-item',
   templateUrl: './item.page.html',
@@ -10,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ItemPage implements OnInit {
   
+  role:any;
   id:any
   data: any={}
   quantity =1;
@@ -17,8 +20,13 @@ export class ItemPage implements OnInit {
     private route : Router, 
     private modalController: ModalController, 
     private toastController: ToastController, 
-    private active:ActivatedRoute
-    ) { }
+    private active:ActivatedRoute,
+    private alert: AlertController
+    ) {
+       active.params.subscribe(a=>{
+        this.ngOnInit()
+       })
+    }
 
     doMin(){
       
@@ -32,7 +40,12 @@ export class ItemPage implements OnInit {
       this.quantity += 1;
     }
   ngOnInit() {
+    this.role = window.localStorage.getItem('role');
+    // console.log("role: " + this.role);
+    
     this.id = this.active.snapshot.paramMap.get('id')
+    console.log(this.id);
+    
     this.getData()
   }
 
@@ -44,6 +57,47 @@ export class ItemPage implements OnInit {
     this.route.navigate(['search'])
   }
 
+  doDel(){
+    this.alert.create({
+      message: "Apakah yakin ingin menghapus buku ?",
+      buttons: [{
+        text: "Oke",
+        role: "oke",
+        handler: he=>{
+          this.del(this.id)
+        }
+      },
+    {
+      text:"Batal",
+        role: "batal"
+      
+    }]
+    }).then((a)=>{
+      a.present()
+    })
+  }
+
+  async del(id:any){
+    const res = await fetch(`${environment.apiURL}api/admin/delete-buku/${id}`,{
+      method: "DELETE",
+      headers: {
+        "Content-Type":"application/json",
+        'Authorization': localStorage.getItem('token') as string
+      },
+    })
+
+    const json = await res.json();
+    this.route.navigate(['welcome']);
+    console.log(json);
+
+    if (json.statusCode !== 200) {
+      this.toastController.create({
+        message: json.message,
+        duration: 2000
+      }).then(a => a.present())
+      return;
+  }
+  }
   async doCart(){
     console.log('data'+this.data)
     try {
@@ -71,7 +125,7 @@ export class ItemPage implements OnInit {
       }
 
       this.toastController.create({
-        message: 'Berhasil masuk ke keranjang',
+        message: 'Berhasil beli',
         duration: 2000
       }).then(a => {
         a.present()
@@ -85,10 +139,11 @@ export class ItemPage implements OnInit {
   }
 
   close() {
-    this.route.navigate(['comic'])
+    window.history.back()
   }
+
   async getData(){
-    const res = await fetch(`${environment.apiURL}api/user/show-product/${this.id}`,{
+    const res = await fetch(`${environment.apiURL}api/show-product/${this.id}`,{
       method:"GET",
       headers:{
         "Content-Type":"application/json",
@@ -98,6 +153,5 @@ export class ItemPage implements OnInit {
     const data = await res.json()
     this.data = data.data.data
     console.log(this.data);
-    
   }
 }

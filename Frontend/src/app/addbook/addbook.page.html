@@ -1,0 +1,58 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Tambah Buku</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<div class="arrow">
+    <ion-icon (click)="doWelcome()" name="chevron-back-sharp"></ion-icon>
+</div>
+<ion-content>
+    <br>
+    <ion-label>Judul</ion-label>
+    <ion-item fill="outline">
+        <ion-input [(ngModel)]="form.judul_buku"></ion-input>
+    </ion-item>
+    <br>
+    <ion-label>Jenis</ion-label>
+    <ion-list>
+        <ion-item fill="outline">
+            <ion-select aria-label="Buku" placeholder="Pilih Jenis Buku" (ionChange)="handleChange($event)">
+                <ion-select-option value="2">Komik</ion-select-option>
+                <ion-select-option value="1">Novel</ion-select-option>
+                <ion-select-option value="5">Komputer</ion-select-option>
+                <ion-select-option value="3">Kamus</ion-select-option>
+                <ion-select-option value="4">Bisnis</ion-select-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+    <br>
+    <ion-label>Gambar</ion-label>
+    <ion-item fill="outline">
+        <ion-input type="file" accept="image/png, image/jpeg, image/jpg" (change)="loadImage($event)"></ion-input>
+    </ion-item>
+    <br>
+    <ion-label>Stok</ion-label>
+    <ion-item fill="outline">
+        <ion-input [(ngModel)]="form.stok_buku"></ion-input>
+    </ion-item>
+    <br>
+    <ion-label>Harga</ion-label>
+    <ion-item fill="outline">
+        <ion-input type="number" [(ngModel)]="form.harga_buku">Rp.</ion-input>
+    </ion-item>
+    <br>
+    <ion-label>Sinopsis</ion-label>
+    <ion-item fill="outline">
+        <ion-input [(ngModel)]="form.sinopsis_buku"></ion-input>
+    </ion-item>
+    <br>
+    <ion-label>Email</ion-label>
+    <ion-item fill="outline">
+        <ion-input [(ngModel)]="form.email"></ion-input>
+    </ion-item>
+    <br>
+
+    <ion-button (click)="doTambah()">Simpan</ion-button>
+
+</ion-content>

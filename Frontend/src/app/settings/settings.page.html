@@ -1,9 +1,25 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>settings</ion-title>
-  </ion-toolbar>
+<ion-header class="head">
+    <h3>Welcome</h3>
+    <label>
+    <ion-button (click)="doLogout()" class="btn-logout">
+        <ion-icon name="exit-outline"></ion-icon>
+    </ion-button> Log Out
+</label>
 </ion-header>
 
 <ion-content>
-
+    <br>
+    <ion-button style="width: 200px;">
+        <ion-label>Tambah Buku</ion-label>
+    </ion-button>
+    <br>
+    <br>
+    <ion-button style="width: 200px;">
+        <ion-label>Tambah Jenis Buku</ion-label>
+    </ion-button>
+    <br>
+    <br>
+    <ion-button style="width: 200px;">
+        <ion-label>Hapus Buku</ion-label>
+    </ion-button>
 </ion-content>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { environment } from 'src/environments/environment';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -10,12 +11,18 @@ import { environment } from 'src/environments/environment';
 })
 export class CartPage implements OnInit {
 
+  role: any = [];
   books: any = [];
   total:any = [];
   constructor(
     private route: Router,
-    private toastController: ToastController
-    ) { }
+    private toastController: ToastController,
+    private active: ActivatedRoute
+    ) {
+      active.params.subscribe(a=>{
+        this.ngOnInit()
+       })
+     }
 
     totalHarga(){
       for (let book of this.books){
@@ -30,6 +37,7 @@ export class CartPage implements OnInit {
   ngOnInit() {
   this.getCart()
   this.totalHarga()
+  this.role = window.localStorage.getItem('role');
   }
 
   doWelcome(){
@@ -44,12 +52,16 @@ export class CartPage implements OnInit {
     this.route.navigate(['item'])
   }
 
-  doTransaction(){
-    this.route.navigate(['transaction'])
+  doTransaction(id: any){
+    this.route.navigate([`transaction/${id}`])
+  }
+
+  async delCart(id: any){
+    const res = await fetch(`${environment.apiURL}api/user/delete-cart`)
   }
 
   async getCart(){
-    const res = await fetch(`${environment.apiURL}api/user/show-cart`,{
+    const res = await fetch(`${environment.apiURL}api/show-cart`,{
       method:"GET",
       headers:{
         "Content-Type":"application/json",

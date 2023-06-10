@@ -1,7 +1,8 @@
 div.topic {
     font-size: 1.3rem;
     margin: 10px;
-    padding-top: 5px;
+    padding-top: 0px;
+    padding-bottom: 5px;
 }
 
 ion-grid {
@@ -87,9 +88,10 @@ ion-thumbnail {
     }
 }
 
-// .card {
-//     padding-top: 35px;
-// }
+.card {
+    padding-top: 20px;
+}
+
 // #my-footer {
 //     position: fixed;
 //     bottom: 0;

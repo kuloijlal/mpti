@@ -34,15 +34,9 @@ export class RegisterPage implements OnInit {
     this.showPassword = !this.showPassword;
   }
 
-  // register(){
-  //   this.alert.create({
-  //     message:"Berhasil Daftar", 
-  //     buttons:[
-  //       "OK"
-  //     ]
-  //   }).then(a=>
-  //     a.present())
-  // }
+  close() {
+    window.history.back()
+  }
 
   async doRegister(){
 
@@ -61,7 +55,7 @@ export class RegisterPage implements OnInit {
     const data = await res.json()
     console.log(data);
 
-    if (data.statusCode!==200){
+    if (data.data.statusCode!==200){
       this.alert.create({
         message:"Gagal Regis",
         buttons:["OK"]

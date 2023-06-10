@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-search',
@@ -8,12 +8,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./search.page.scss'],
 })
 export class SearchPage implements OnInit {
-
+  genre:any;
   constructor(private route : Router) { }
 
   ngOnInit() {
+    this.getGenre()
   }
 
+  async getGenre(){
+    const res = await fetch(`${environment.apiURL}api/show-all-jenis`,{
+      method:"GET",
+      headers:{
+        "Content-Type":"application/json"
+      }
+    })
+
+    const data = await res.json()
+    console.log(data);
+    
+  }
   doWelcome(){
     this.route.navigate(['welcome'])
   }

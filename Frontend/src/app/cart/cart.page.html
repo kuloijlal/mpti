@@ -5,10 +5,6 @@
 </ion-header>
 
 <ion-content>
-    <div class="arrow">
-        <ion-icon (click)="doWelcome()" name="arrow-back-sharp"></ion-icon>
-    </div>
-
     <ion-list *ngFor="let book of books">
         <ion-item lines="full">
             <ion-label>
@@ -17,7 +13,7 @@
                 <p>Jumlah {{book.quantity_checkout}}</p>
                 <h2>Total Harga Rp.{{book.total_checkout}}</h2>
             </ion-label>
-            <ion-button color="success" (click)="doTransaction()">Buy</ion-button>
+            <ion-button color="success" (click)="doTransaction(book.idm_checkout)" *ngIf="this.role == 'user'">Detail</ion-button>
         </ion-item>
     </ion-list>
 </ion-content>

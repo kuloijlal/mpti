@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Route } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { environment } from 'src/environments/environment';
 
@@ -15,15 +16,14 @@ export class ComicPage implements OnInit {
 
   constructor(
     private route: Router,
-    private toastController: ToastController
+    private toastController: ToastController,
     ) { }
 
   ngOnInit(
   ) {
     this.getComic();
-  
-    
   }
+
   doSearch(){
     this.route.navigate(['search']);
   }
@@ -48,7 +48,7 @@ export class ComicPage implements OnInit {
 
   async getComic() {
     try {
-      const res = await fetch(`${environment.apiURL}api/user/show-product-user`, {
+      const res = await fetch(`${environment.apiURL}api/show-product-jenis`, {
         headers: {
           'Authorization': localStorage.getItem('token') as string
         }

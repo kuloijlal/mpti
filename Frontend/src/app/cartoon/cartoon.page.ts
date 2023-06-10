@@ -45,7 +45,7 @@ export class CartoonPage implements OnInit {
 
   async getCartoon() {
     try {
-      const res = await fetch(`${environment.apiURL}api/user/show-product-user`, {
+      const res = await fetch(`${environment.apiURL}api/show-product`, {
         headers: {
           'Authorization': localStorage.getItem('token') as string
         }

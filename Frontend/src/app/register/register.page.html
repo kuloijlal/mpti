@@ -5,14 +5,18 @@
 </ion-header> -->
 
 <ion-content>
-
+    <!-- 
     <div class="gambar">
         <ion-img src="assets/image/351905d01e8531078c1cce883f1cafed-removebg-preview.png"></ion-img>
-    </div>
-    <div id="container" style="padding: 10%">
-        <div class="login">
-            <h2> Register </h2>
+    </div> -->
+    <div class="yoi">
+        <!-- <div class="login"> -->
+        <div class="arrow">
+            <ion-icon (click)="close()" name="chevron-back-sharp"></ion-icon>
         </div>
+        <h2> Register </h2>
+        <br>
+        <!-- </div> -->
         <ion-item fill="outline">
             <ion-label color="danger" position="floating">Username</ion-label>
             <ion-input [(ngModel)]="form.username" [ngModelOptions]="{standalone: true}" placeholder="Enter Email/Username"></ion-input>
@@ -34,10 +38,12 @@
             <ion-input type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="form.confirmation_password"></ion-input>
             <ion-icon [name]="showPassword ? 'eye-off' : 'eye'" slot="end" (click)="togglePasswordVisibility()"></ion-icon>
         </ion-item>
-        <div class="register">
-            <ion-button color="danger" id="present-alert" (click)="doRegister()" expand="block">
-                <ion-icon slot="start" name="create"></ion-icon>Register
-            </ion-button>
-        </div>
+        <!-- <div class="register"> -->
+        <br>
+
+        <ion-button expand="block" color="danger" id="present-alert" (click)="doRegister()" expand="block">
+            <ion-icon slot="start" name="create"></ion-icon>Register
+        </ion-button>
+        <!-- </div> -->
     </div>
 </ion-content>

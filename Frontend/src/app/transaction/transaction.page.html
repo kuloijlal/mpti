@@ -1,35 +1,29 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>transaction</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>transaction</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
- <div class="square"></div>
+    <ion-list *ngIf="data">
+        <ion-item>
+            <ion-label>Invoice:</ion-label>
+            <ion-text>{{ this.data.invoice_checkout }}</ion-text>
+        </ion-item>
+        <ion-item>
+            <ion-label>Buku:</ion-label>
+            <ion-text>{{ this.data.idm_buku }}</ion-text>
+        </ion-item>
+        <ion-item>
+            <ion-label>Quantity:</ion-label>
+            <ion-text>{{ this.data.quantity_checkout }}</ion-text>
+        </ion-item>
+        <ion-item>
+            <ion-label>Total Harga:</ion-label>
+            <ion-text>{{ this.data.total_checkout }}</ion-text>
+        </ion-item>
+    </ion-list>
+    <br>
+    <!-- <ion-button expand="block" color="{{this.message.color}}" (click)="msg()">{{ message.status }}</ion-button> -->
+    <ion-button expand="block" (click)="done()">Pesanan sudah diterima</ion-button>
 </ion-content>
-<!-- <ion-footer>
-  <ion-toolbar>
-  <ion-tabs>
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button (click)="doWelcome()"tab="home">
-        <ion-icon name="home-outline"></ion-icon>
-        Home
-      </ion-tab-button>
-      <ion-tab-button (click)="doSearch()" tab="search">
-        <ion-icon name="search-outline"></ion-icon>
-        Search
-      </ion-tab-button>
-      <ion-tab-button tab="transaction">
-        <ion-icon color="danger" name="receipt"></ion-icon>
-        <ion-text color="danger">
-          Transaction
-        </ion-text>
-      </ion-tab-button>
-      <ion-tab-button (click)="doCart()" tab="cart">
-        <ion-icon name="cart-outline"></ion-icon>
-        Cart
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
-  </ion-toolbar>
-</ion-footer> -->

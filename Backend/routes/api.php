@@ -21,6 +21,13 @@ use App\Http\Controllers\UserController;
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
 Route::post('checkout', [CheckoutController::class, 'checkout']);
+Route::get('show-product', [CheckoutController::class, 'show_product']);
+Route::get('show-product/{id}', [UserController::class, 'show_product_by_id']);
+Route::get('show-cart', [UserController::class, 'showCart']);
+Route::get('show-product-jenis', [CheckoutController::class, 'show_product_jenis']);
+Route::get('show-all-jenis',[CheckoutController::class, 'get_tbm_jenis']);
+Route::get('show-all-cart', [CheckoutController::class, 'show_all_cart']);
+Route::get('/checkout/{id}', [CheckoutController::class, 'show']);
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
@@ -41,11 +48,8 @@ Route::middleware(['admin.api'])->prefix('admin')->group(function(){
 });
 
 Route::middleware(['user.api'])->prefix('user')->group(function(){
-    Route::get('show-product-user', [UserController::class, 'show_product_user']);
     Route::post('checkout/{id}', [UserController::class, 'checkout']);
-    Route::get('show-product/{id}', [UserController::class, 'show_product_by_id']);
     Route::post('add-to-cart/{id}', [UserController::class, 'addToCart']);
-    Route::get('show-cart', [UserController::class, 'showCart']);
     Route::delete('delete-cart/{id}', [UserController::class, 'deleteCart']);
 });
 

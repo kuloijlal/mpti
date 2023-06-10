@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
-    public function show_product_user() {
+    public function show_product_jenis() {
         $product = Buku::with('tbm_jenis')->get();
 
         $data = [];

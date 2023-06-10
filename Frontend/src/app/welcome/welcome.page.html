@@ -1,32 +1,33 @@
 <ion-header class="head">
-    <p>Welcome To Bookstore{{ form.username }}</p>
-    <!-- <div id="containerprofile">
-    </div> -->
+    <h3>Welcome</h3>
+    <ion-button (click)="doAdd()" class="btn-logout" *ngIf="this.role == 'admin'">
+        <ion-icon name="duplicate-outline"></ion-icon>
+    </ion-button>
     <ion-button (click)="doLogout()" class="btn-logout">
         <ion-icon name="exit-outline"></ion-icon>
     </ion-button>
-    <!-- <ion-toolbar class="head">
-        <ion-title>
-        </ion-title>
-        <div class="cart">
-        </div>
-    </ion-toolbar> -->
 </ion-header>
 
 <ion-content>
-    <div class="topic">
-        Recommendation
-    </div>
-
-
-    <div class="card" *ngFor="let book of book" (click)="doItem(book)">
-
-    </div>
-    <ion-card class="card" *ngFor="let book of book" (click)="doItem(book)">
+    <ion-header>
+        <div class="topic">
+            <h2>Recommendation</h2>
+        </div>
+    </ion-header>
+    <!-- <div class="card" *ngFor="let book of book" (click)="doItem(book.id_buku)">
+    </div> -->
+    <ion-card class="card" *ngFor="let book of book" (click)="doItem(book.id_buku)">
         <img src="{{book.gambar}}">
         <ion-header>
             <h2><b>{{book.judul_buku}}</b></h2>
             <h3>Rp. {{book.harga_buku}}</h3>
             <h4>{{book.sinopsis_buku}}</h4>
+            <!-- <ion-button>
+                <ion-label>
+                    <ion-icon name="ellipsis-vertical"></ion-icon>
+                    Detail Buku
+                </ion-label>
+            </ion-button> -->
         </ion-header>
     </ion-card>
+</ion-content>

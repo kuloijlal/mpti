@@ -44,7 +44,7 @@ export class KamusPage implements OnInit {
 
   async getKamus() {
     try {
-      const res = await fetch(`${environment.apiURL}api/user/show-product-user`, {
+      const res = await fetch(`${environment.apiURL}api/show-product-jenis`, {
         headers: {
           'Authorization': localStorage.getItem('token') as string
         }

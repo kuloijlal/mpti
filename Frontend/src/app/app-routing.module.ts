@@ -22,7 +22,7 @@ const routes: Routes = [
         loadChildren: () => import('./welcome/welcome.module').then( m => m.WelcomePageModule)
       },
       {
-        path: 'transaction',
+        path: 'transaction/:id',
         loadChildren: () => import('./transaction/transaction.module').then( m => m.TransactionPageModule)
       },
       {
@@ -36,13 +36,14 @@ const routes: Routes = [
       {
         path: 'settings',
         loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
+      },  
+      {
+        path: 'item/:id',
+        loadChildren: () => import('./item/item.module').then( m => m.ItemPageModule)
       },
     ]
   },
-  {
-    path: 'item/:id',
-    loadChildren: () => import('./item/item.module').then( m => m.ItemPageModule)
-  },
+
 
   {
     path: 'comic',
@@ -82,6 +83,11 @@ const routes: Routes = [
     path: 'bisnis',
     loadChildren: () => import('./bisnis/bisnis.module').then( m => m.BisnisPageModule)
   },
+  {
+    path: 'addbook',
+    loadChildren: () => import('./addbook/addbook.module').then( m => m.AddbookPageModule)
+  },
+
 
 
 ];
